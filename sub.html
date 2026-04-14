@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Donating Team</title>
+    <link rel="stylesheet" href="sub.css">
+</head>
+
+<body>
+    <div class="top-banner">Join our upcoming charity drive this weekend!</div>
+
+    <header>
+        <a href="#" class="logo">
+            <img src="./img_gallery/arc_logo-removebg-preview.png" alt="ARC Vietnam Logo">
+        </a>
+
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#work">Our Work</a>
+            <a href="#action">Take Action</a>
+            <a href="#donate" class="donate-btn">Donate</a>
+        </nav>
+    </header>
+
+    <section class="carousel-container">
+        <div class="slide active">
+            <img src="./img_gallery/vaccine/tap_the_4.jpg" alt="Team Action 1">
+            <div class="slide-overlay">
+                <h1>Empowering Communities Through Action</h1>
+                <a href="#donate" class="cta-btn">Make an Impact</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="./img_gallery/vaccine/tiem_1.jpg" alt="Team Action 2">
+            <div class="slide-overlay">
+                <h1>Building a Better Tomorrow</h1>
+                <a href="#donate" class="cta-btn">Join Us</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="./img_gallery/vaccine/tiem_2.jpg" alt="Team Action 3">
+        </div>
+        <div class="slide">
+            <img src="./img_gallery/vaccine/tiem_3.jpg" alt="Team Action 4">
+        </div>
+        <div class="slide">
+            <img src="./img_gallery/vaccine/tap_the_1.jpg" alt="Team Action 5">
+        </div>
+        <div class="slide">
+            <img src="./img_gallery/vaccine/tap_the_2.jpg" alt="Team Action 6">
+        </div>
+        <div class="slide">
+            <img src="./img_gallery/vaccine/tap_the_3.jpg" alt="Team Action 7">
+        </div>
+
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </section>
+
+    <section class="impact">
+        <h2>The Impact We Make</h2>
+        <div class="impact-grid">
+            <div class="card">
+                <h3>Greater Opportunities</h3>
+                <p>Providing essential resources and support networks to communities in need.</p>
+            </div>
+            <div class="card">
+                <h3>Improved Health</h3>
+                <p>Delivering crucial supplies and fostering sustainable, healthy environments.</p>
+            </div>
+            <div class="card">
+                <h3>Generational Change</h3>
+                <p>Empowering individuals to build a foundation that lifts up future generations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="metrics">
+        <div class="metric">
+            <h3>5,000+</h3>
+            <p>People Reached</p>
+        </div>
+        <div class="metric">
+            <h3>120</h3>
+            <p>Projects Completed</p>
+        </div>
+        <div class="metric">
+            <h3>300</h3>
+            <p>Active Volunteers</p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="newsletter-section">
+                <h2>Sign up for Emails</h2>
+                <form class="newsletter-form">
+                    <div class="name-inputs">
+                        <input type="text" placeholder="First Name" required>
+                        <input type="text" placeholder="Last Name" required>
+                    </div>
+                    <input type="email" placeholder="Email Address" required>
+                    <button type="submit" class="join-btn">JOIN US</button>
+                </form>
+            </div>
+
+            <div class="navigation-section">
+                <div class="social-icons">
+                    <a href="#" class="icon">IG</a>
+                    <a href="#" class="icon">FB</a>
+                    <a href="#" class="icon">IN</a>
+                    <a href="#" class="icon">YT</a>
+                </div>
+
+                <div class="footer-columns">
+                    <div class="footer-col">
+                        <h4>OUR WORK</h4>
+                        <a href="#">SCHOOL BUILDS</a>
+                        <a href="#">TEACHER SUPPORT</a>
+                        <a href="#">WASH</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>TAKE ACTION</h4>
+                        <a href="#">DONATE</a>
+                        <a href="#">GIVE MONTHLY</a>
+                        <a href="#">CAMPAIGN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="branding-info">
+                <img src="./img_gallery/arc_logo-removebg-preview.png" alt="ARC Vietnam Logo" class="footer-logo">
+                <p>
+                    ARC Vietnam<br>
+                    Ho Chi Minh City, Vietnam<br>
+                    Contact: info@arcvietnam.org
+                </p>
+            </div>
+
+            <div class="utility-section">
+                <div class="search-container">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit" class="search-btn">SEARCH</button>
+                </div>
+
+                <div class="utility-links">
+                    <a href="#">Site Map</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Brand Assets</a>
+                    <a href="#">Contact</a>
+                </div>
+
+                <div class="copyright">
+                    <p>&copy;2008 – 2026 ARC Vietnam. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+
+            // Handle wrapping around the 7 images
+            if (index >= slides.length) currentSlideIndex = 0;
+            if (index < 0) currentSlideIndex = slides.length - 1;
+
+            // Show the target slide
+            slides[currentSlideIndex].classList.add('active');
+        }
+
+        function changeSlide(direction) {
+            currentSlideIndex += direction;
+            showSlide(currentSlideIndex);
+        }
+
+        // Optional: Auto-play the carousel every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
+</body>
+
+
+</html>
